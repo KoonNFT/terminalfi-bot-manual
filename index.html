@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terminal.Fi XP Bot Manual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="card">
+      <header class="header">
+        <div class="header-left">
+          <h1>
+            Terminal.Fi XP Bot
+            <span class="badge">Telegram XP & Ranking Bot</span>
+          </h1>
+          <p class="subtitle">
+            Track community activity as XP, manage rankings and campaign events.
+          </p>
+          <div class="chip-row">
+            <span class="chip">XP Ranking</span>
+            <span class="chip">Invite Rewards</span>
+            <span class="chip">Campaign Events</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="lang-switch">
+            <a href="../index.html">🇰🇷 한국어</a>
+            <a href="#" class="active">🇺🇸 English</a>
+          </div>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            <span class="theme-emoji">🌙</span>
+            <span class="theme-label">Dark mode</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>📌 User Commands</h2>
+        <p>Commands that any user can run inside the group.</p>
+
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/stats</span>
+            <span class="cmd-desc">Show your XP, level, invites and basic stats.</span>
+          </li>
+          <li>
+            <span class="cmd">/ranking</span>
+            <span class="cmd-desc">Display the Top 10 XP ranking.</span>
+          </li>
+          <li>
+            <span class="cmd">/daily</span>
+            <span class="cmd-desc">Claim your daily XP reward (once per day).</span>
+          </li>
+          <li>
+            <span class="cmd">/mylink</span>
+            <span class="cmd-desc">Generate your personal Terminal.Fi invite link.</span>
+          </li>
+          <li>
+            <span class="cmd">/myinvites</span>
+            <span class="cmd-desc">Check how many users you have invited.</span>
+          </li>
+          <li>
+            <span class="cmd">/invites_ranking</span>
+            <span class="cmd-desc">Show the invite-based Top ranking.</span>
+          </li>
+          <li>
+            <span class="cmd">/join</span>
+            <span class="cmd-desc">Join an active lottery event (if there is one).</span>
+          </li>
+          <li>
+            <span class="cmd">/event_rank</span>
+            <span class="cmd-desc">Show XP ranking within the configured campaign period.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>🔧 Admin Commands</h2>
+        <p>
+          Admin-only commands. It is recommended to run most of these via <b>DM with the bot</b>.
+          (OWNER-only commands are intentionally omitted.)
+        </p>
+
+        <div class="cmd-group-title">Basic Lookup</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/chat_id &lt;@handle or user_id&gt;</span>
+            <span class="cmd-desc">Get the Telegram user_id of a specific user.</span>
+          </li>
+          <li>
+            <span class="cmd">/list_admins</span>
+            <span class="cmd-desc">List all registered admins.</span>
+          </li>
+          <li>
+            <span class="cmd">/ref_user &lt;@handle&gt;</span>
+            <span class="cmd-desc">Check how many users a specific user has invited.</span>
+          </li>
+          <li>
+            <span class="cmd">/user_stats &lt;@handle&gt;</span>
+            <span class="cmd-desc">See full stats (XP, level, invites, etc.) for a user.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">Activity Summary</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/today</span>
+            <span class="cmd-desc">Show today’s summary for the main group (KST).</span>
+          </li>
+          <li>
+            <span class="cmd">/week</span>
+            <span class="cmd-desc">Show a 7-day summary.</span>
+          </li>
+          <li>
+            <span class="cmd">/range YYYY-MM-DD YYYY-MM-DD</span>
+            <span class="cmd-desc">Show a summary for a custom date range.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">XP Keyword Controls</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/add_xp_bonus &lt;word&gt; &lt;xp&gt;</span>
+            <span class="cmd-desc">Give bonus XP when a message contains this keyword.</span>
+          </li>
+          <li>
+            <span class="cmd">/add_xp_block &lt;word&gt;</span>
+            <span class="cmd-desc">Block XP gain when a message contains this keyword.</span>
+          </li>
+          <li>
+            <span class="cmd">/del_xp_word &lt;word&gt;</span>
+            <span class="cmd-desc">Remove a registered bonus/block keyword.</span>
+          </li>
+          <li>
+            <span class="cmd">/list_xp_words</span>
+            <span class="cmd-desc">List all XP-related keywords.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">XP Policy</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/set_cooldown &lt;seconds&gt;</span>
+            <span class="cmd-desc">Set the minimum interval between XP gains per user.</span>
+          </li>
+          <li>
+            <span class="cmd">/set_daily_cap &lt;XP&gt;</span>
+            <span class="cmd-desc">Set the maximum daily XP per user.</span>
+          </li>
+          <li>
+            <span class="cmd">/set_inv_xp &lt;XP&gt;</span>
+            <span class="cmd-desc">Set XP amount awarded per invite.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">Campaign Controls</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/set_campaign &lt;YYYY-MM-DD&gt; &lt;YYYY-MM-DD&gt;</span>
+            <span class="cmd-desc">Set the campaign period for XP (used by /event_rank).</span>
+          </li>
+          <li>
+            <span class="cmd">/clear_campaign</span>
+            <span class="cmd-desc">Clear campaign period and related data.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">Bot Operation & Status</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/set_time &lt;start&gt; &lt;end&gt;</span>
+            <span class="cmd-desc">
+              Set hours (KST) when XP is active/inactive. Uses 0–23 hour format.
+            </span>
+          </li>
+          <li>
+            <span class="cmd">/bot_off</span>
+            <span class="cmd-desc">Temporarily disable XP tracking and main features.</span>
+          </li>
+          <li>
+            <span class="cmd">/bot_on</span>
+            <span class="cmd-desc">Re-enable the bot after it has been turned off.</span>
+          </li>
+          <li>
+            <span class="cmd">/bot_status</span>
+            <span class="cmd-desc">Check the current status and time settings of the bot.</span>
+          </li>
+        </ul>
+
+        <div class="cmd-group-title">Manual XP & Lottery</div>
+        <ul class="cmd-list">
+          <li>
+            <span class="cmd">/add_xp &lt;@handle&gt; &lt;XP&gt;</span>
+            <span class="cmd-desc">Manually add XP to a specific user.</span>
+          </li>
+          <li>
+            <span class="cmd">/sub_xp &lt;@handle&gt; &lt;XP&gt;</span>
+            <span class="cmd-desc">Subtract XP from a specific user.</span>
+          </li>
+          <li>
+            <span class="cmd">/lottery [minutes] [winners]</span>
+            <span class="cmd-desc">
+              Start a lottery. Example: <code>/lottery 5 3</code> → draw 3 winners after 5 minutes.
+            </span>
+          </li>
+          <li>
+            <span class="cmd">/lottery_end &lt;winners&gt;</span>
+            <span class="cmd-desc">End the current lottery and draw winners immediately.</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <span>Contact: <a href="https://t.me/KoonNFT" target="_blank">@KoonNFT</a></span>
+        <span>
+          GitHub:
+          <a href="https://github.com/KoonNFT/terminalfi-bot-manual" target="_blank">
+            KoonNFT/terminalfi-bot-manual
+          </a>
+        </span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+</body>
+</html>
