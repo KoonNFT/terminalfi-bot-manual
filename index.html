@@ -1,229 +1,399 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <title>Terminal.Fi XP Bot Manual</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../assets/style.css" />
-</head>
-<body>
-  <div class="page-wrap">
-    <div class="card">
-      <header class="header">
-        <div class="header-left">
-          <h1>
-            Terminal.Fi XP Bot
-            <span class="badge">Telegram XP & Ranking Bot</span>
-          </h1>
-          <p class="subtitle">
-            Track community activity as XP, manage rankings and campaign events.
-          </p>
-          <div class="chip-row">
-            <span class="chip">XP Ranking</span>
-            <span class="chip">Invite Rewards</span>
-            <span class="chip">Campaign Events</span>
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Terminal.Fi XP Bot 설명서</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="app-header-inner">
+          <div class="brand">
+            <div class="brand-mark"></div>
+            <div>
+              <div class="brand-text-main">Terminal.Fi XP Bot</div>
+              <div class="brand-text-sub">
+                텔레그램 커뮤니티용 XP·랭킹·캠페인 봇
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="header-actions">
-          <div class="lang-switch">
-            <a href="../index.html">🇰🇷 한국어</a>
-            <a href="#" class="active">🇺🇸 English</a>
+          <div class="header-actions">
+            <nav class="lang-switch">
+              <a href="#" class="active">KR</a>
+              <a href="en/index.html">EN</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" type="button">
+              🌙
+            </button>
           </div>
-          <button id="themeToggle" class="theme-toggle" type="button">
-            <span class="theme-emoji">🌙</span>
-            <span class="theme-label">Dark mode</span>
-          </button>
         </div>
       </header>
 
-      <section class="section">
-        <h2>📌 User Commands</h2>
-        <p>Commands that any user can run inside the group.</p>
+      <main class="app-main">
+        <div class="app-main-inner">
+          <h1 class="page-title">Terminal.Fi XP Bot 설명서</h1>
+          <p class="page-subtitle">
+            커뮤니티 활동을 XP로 기록하고, 랭킹·초대·캠페인 이벤트를 운영할 수
+            있는 텔레그램 봇입니다.
+          </p>
+          <div class="meta-row">
+            <span class="meta-pill">XP 랭킹</span>
+            <span class="meta-pill">초대 리워드</span>
+            <span class="meta-pill">캠페인 기간 집계</span>
+            <span class="meta-pill">관리자용 제어 명령어</span>
+          </div>
 
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/stats</span>
-            <span class="cmd-desc">Show your XP, level, invites and basic stats.</span>
-          </li>
-          <li>
-            <span class="cmd">/ranking</span>
-            <span class="cmd-desc">Display the Top 10 XP ranking.</span>
-          </li>
-          <li>
-            <span class="cmd">/daily</span>
-            <span class="cmd-desc">Claim your daily XP reward (once per day).</span>
-          </li>
-          <li>
-            <span class="cmd">/mylink</span>
-            <span class="cmd-desc">Generate your personal Terminal.Fi invite link.</span>
-          </li>
-          <li>
-            <span class="cmd">/myinvites</span>
-            <span class="cmd-desc">Check how many users you have invited.</span>
-          </li>
-          <li>
-            <span class="cmd">/invites_ranking</span>
-            <span class="cmd-desc">Show the invite-based Top ranking.</span>
-          </li>
-          <li>
-            <span class="cmd">/join</span>
-            <span class="cmd-desc">Join an active lottery event (if there is one).</span>
-          </li>
-          <li>
-            <span class="cmd">/event_rank</span>
-            <span class="cmd-desc">Show XP ranking within the configured campaign period.</span>
-          </li>
-        </ul>
-      </section>
+          <div class="layout">
+            <!-- 일반 유저 명령어 -->
+            <section class="card">
+              <div class="card-header">
+                <h2 class="card-title">📌 일반 명령어</h2>
+                <span class="card-tag">그룹 내 모든 유저 사용 가능</span>
+              </div>
 
-      <section class="section">
-        <h2>🔧 Admin Commands</h2>
-        <p>
-          Admin-only commands. It is recommended to run most of these via <b>DM with the bot</b>.
-          (OWNER-only commands are intentionally omitted.)
-        </p>
+              <div class="cmd-section">
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/stats</span>
+                    </div>
+                    <div class="cmd-desc">
+                      내 현재 XP, 레벨, 초대 수 등 전체 스탯을 확인합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/ranking</span>
+                    </div>
+                    <div class="cmd-desc">
+                      경험치 기준 TOP 10 랭킹을 보여줍니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/daily</span>
+                    </div>
+                    <div class="cmd-desc">
+                      하루 한 번, 일일보상 XP를 수령합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/mylink</span>
+                    </div>
+                    <div class="cmd-desc">
+                      나만의 Terminal.Fi 초대 링크를 생성합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/myinvites</span>
+                    </div>
+                    <div class="cmd-desc">
+                      지금까지 내가 초대한 인원 수를 확인합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/invites_ranking</span>
+                    </div>
+                    <div class="cmd-desc">
+                      초대 인원 기준 TOP 랭킹을 조회합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/join</span>
+                    </div>
+                    <div class="cmd-desc">
+                      진행 중인 추첨 이벤트에 참가합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/event_rank</span>
+                    </div>
+                    <div class="cmd-desc">
+                      설정된 캠페인 기간 동안의 XP 랭킹을 확인합니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
 
-        <div class="cmd-group-title">Basic Lookup</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/chat_id &lt;@handle or user_id&gt;</span>
-            <span class="cmd-desc">Get the Telegram user_id of a specific user.</span>
-          </li>
-          <li>
-            <span class="cmd">/list_admins</span>
-            <span class="cmd-desc">List all registered admins.</span>
-          </li>
-          <li>
-            <span class="cmd">/ref_user &lt;@handle&gt;</span>
-            <span class="cmd-desc">Check how many users a specific user has invited.</span>
-          </li>
-          <li>
-            <span class="cmd">/user_stats &lt;@handle&gt;</span>
-            <span class="cmd-desc">See full stats (XP, level, invites, etc.) for a user.</span>
-          </li>
-        </ul>
+            <!-- 관리자 명령어 -->
+            <section class="card">
+              <div class="card-header">
+                <h2 class="card-title">🔧 관리자 명령어</h2>
+                <span class="card-tag">관리자 전용 · DM 사용 권장</span>
+              </div>
 
-        <div class="cmd-group-title">Activity Summary</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/today</span>
-            <span class="cmd-desc">Show today’s summary for the main group (KST).</span>
-          </li>
-          <li>
-            <span class="cmd">/week</span>
-            <span class="cmd-desc">Show a 7-day summary.</span>
-          </li>
-          <li>
-            <span class="cmd">/range YYYY-MM-DD YYYY-MM-DD</span>
-            <span class="cmd-desc">Show a summary for a custom date range.</span>
-          </li>
-        </ul>
+              <div class="cmd-section">
+                <div class="cmd-section-title">기본 조회</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/chat_id</span>
+                      <span class="cmd-arg">&lt;@handle 또는 user_id&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      특정 유저의 Telegram user_id를 조회합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/list_admins</span>
+                    </div>
+                    <div class="cmd-desc">등록된 관리자 목록을 확인합니다.</div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/ref_user</span>
+                      <span class="cmd-arg">&lt;@handle&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      특정 유저가 초대한 인원 수를 조회합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/user_stats</span>
+                      <span class="cmd-arg">&lt;@handle&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      특정 유저의 XP, 레벨, 초대 수 등 전체 스탯을 확인합니다.
+                    </div>
+                  </li>
+                </ul>
 
-        <div class="cmd-group-title">XP Keyword Controls</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/add_xp_bonus &lt;word&gt; &lt;xp&gt;</span>
-            <span class="cmd-desc">Give bonus XP when a message contains this keyword.</span>
-          </li>
-          <li>
-            <span class="cmd">/add_xp_block &lt;word&gt;</span>
-            <span class="cmd-desc">Block XP gain when a message contains this keyword.</span>
-          </li>
-          <li>
-            <span class="cmd">/del_xp_word &lt;word&gt;</span>
-            <span class="cmd-desc">Remove a registered bonus/block keyword.</span>
-          </li>
-          <li>
-            <span class="cmd">/list_xp_words</span>
-            <span class="cmd-desc">List all XP-related keywords.</span>
-          </li>
-        </ul>
+                <div class="cmd-section-title">활동 요약</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/today</span>
+                    </div>
+                    <div class="cmd-desc">
+                      오늘 기준 메인 그룹 활동 요약을 보여줍니다. (KST)
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/week</span>
+                    </div>
+                    <div class="cmd-desc">
+                      최근 7일간의 활동 요약을 보여줍니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/range</span>
+                      <span class="cmd-arg">YYYY-MM-DD YYYY-MM-DD</span>
+                    </div>
+                    <div class="cmd-desc">
+                      지정한 기간의 활동 데이터를 요약해서 보여줍니다.
+                    </div>
+                  </li>
+                </ul>
 
-        <div class="cmd-group-title">XP Policy</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/set_cooldown &lt;seconds&gt;</span>
-            <span class="cmd-desc">Set the minimum interval between XP gains per user.</span>
-          </li>
-          <li>
-            <span class="cmd">/set_daily_cap &lt;XP&gt;</span>
-            <span class="cmd-desc">Set the maximum daily XP per user.</span>
-          </li>
-          <li>
-            <span class="cmd">/set_inv_xp &lt;XP&gt;</span>
-            <span class="cmd-desc">Set XP amount awarded per invite.</span>
-          </li>
-        </ul>
+                <div class="cmd-section-title">XP 키워드 관리</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/add_xp_bonus</span>
+                      <span class="cmd-arg">&lt;word&gt; &lt;xp&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      메시지에 해당 단어가 포함되면 추가 XP를 지급하도록 설정합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/add_xp_block</span>
+                      <span class="cmd-arg">&lt;word&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      해당 단어가 포함된 메시지에는 XP를 지급하지 않도록 차단합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/del_xp_word</span>
+                      <span class="cmd-arg">&lt;word&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      등록된 XP 키워드(보너스/차단)를 삭제합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/list_xp_words</span>
+                    </div>
+                    <div class="cmd-desc">
+                      현재 등록된 XP 관련 키워드 목록을 확인합니다.
+                    </div>
+                  </li>
+                </ul>
 
-        <div class="cmd-group-title">Campaign Controls</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/set_campaign &lt;YYYY-MM-DD&gt; &lt;YYYY-MM-DD&gt;</span>
-            <span class="cmd-desc">Set the campaign period for XP (used by /event_rank).</span>
-          </li>
-          <li>
-            <span class="cmd">/clear_campaign</span>
-            <span class="cmd-desc">Clear campaign period and related data.</span>
-          </li>
-        </ul>
+                <div class="cmd-section-title">XP 정책 설정</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/set_cooldown</span>
+                      <span class="cmd-arg">&lt;초&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      한 유저가 XP를 다시 받을 때까지 최소 간격(쿨다운)을 설정합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/set_daily_cap</span>
+                      <span class="cmd-arg">&lt;XP&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      유저 1명이 하루에 얻을 수 있는 최대 XP를 설정합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/set_inv_xp</span>
+                      <span class="cmd-arg">&lt;XP&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      초대 1명당 지급할 XP 수치를 설정합니다.
+                    </div>
+                  </li>
+                </ul>
 
-        <div class="cmd-group-title">Bot Operation & Status</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/set_time &lt;start&gt; &lt;end&gt;</span>
-            <span class="cmd-desc">
-              Set hours (KST) when XP is active/inactive. Uses 0–23 hour format.
-            </span>
-          </li>
-          <li>
-            <span class="cmd">/bot_off</span>
-            <span class="cmd-desc">Temporarily disable XP tracking and main features.</span>
-          </li>
-          <li>
-            <span class="cmd">/bot_on</span>
-            <span class="cmd-desc">Re-enable the bot after it has been turned off.</span>
-          </li>
-          <li>
-            <span class="cmd">/bot_status</span>
-            <span class="cmd-desc">Check the current status and time settings of the bot.</span>
-          </li>
-        </ul>
+                <div class="cmd-section-title">캠페인 설정</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/set_campaign</span>
+                      <span class="cmd-arg"
+                        >&lt;YYYY-MM-DD&gt; &lt;YYYY-MM-DD&gt;</span
+                      >
+                    </div>
+                    <div class="cmd-desc">
+                      캠페인 XP 집계 기간을 설정합니다. <code>/event_rank</code>에
+                      반영됩니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/clear_campaign</span>
+                    </div>
+                    <div class="cmd-desc">
+                      설정된 캠페인 기간 및 관련 데이터를 초기화합니다.
+                    </div>
+                  </li>
+                </ul>
 
-        <div class="cmd-group-title">Manual XP & Lottery</div>
-        <ul class="cmd-list">
-          <li>
-            <span class="cmd">/add_xp &lt;@handle&gt; &lt;XP&gt;</span>
-            <span class="cmd-desc">Manually add XP to a specific user.</span>
-          </li>
-          <li>
-            <span class="cmd">/sub_xp &lt;@handle&gt; &lt;XP&gt;</span>
-            <span class="cmd-desc">Subtract XP from a specific user.</span>
-          </li>
-          <li>
-            <span class="cmd">/lottery [minutes] [winners]</span>
-            <span class="cmd-desc">
-              Start a lottery. Example: <code>/lottery 5 3</code> → draw 3 winners after 5 minutes.
-            </span>
-          </li>
-          <li>
-            <span class="cmd">/lottery_end &lt;winners&gt;</span>
-            <span class="cmd-desc">End the current lottery and draw winners immediately.</span>
-          </li>
-        </ul>
-      </section>
+                <div class="cmd-section-title">봇 운영 & 상태</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/set_time</span>
+                      <span class="cmd-arg">&lt;시작&gt; &lt;종료&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      KST 기준으로 XP 기록이 활성/비활성 되는 시간을 설정합니다
+                      (0~23시 형식).
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/bot_off</span>
+                    </div>
+                    <div class="cmd-desc">
+                      봇의 XP 기록 및 주요 기능을 일시 중지합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/bot_on</span>
+                    </div>
+                    <div class="cmd-desc">
+                      중지된 봇 기능을 다시 활성화합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/bot_status</span>
+                    </div>
+                    <div class="cmd-desc">
+                      현재 봇의 상태 및 시간 설정 등을 확인합니다.
+                    </div>
+                  </li>
+                </ul>
 
-      <footer class="footer">
-        <span>Contact: <a href="https://t.me/KoonNFT" target="_blank">@KoonNFT</a></span>
-        <span>
-          GitHub:
-          <a href="https://github.com/KoonNFT/terminalfi-bot-manual" target="_blank">
-            KoonNFT/terminalfi-bot-manual
-          </a>
-        </span>
+                <div class="cmd-section-title">수동 XP & 추첨</div>
+                <ul class="cmd-list">
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/add_xp</span>
+                      <span class="cmd-arg">&lt;@handle&gt; &lt;XP&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      특정 유저에게 XP를 수동으로 지급합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/sub_xp</span>
+                      <span class="cmd-arg">&lt;@handle&gt; &lt;XP&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      특정 유저의 XP를 차감합니다.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/lottery</span>
+                      <span class="cmd-arg">[분] [당첨자수]</span>
+                    </div>
+                    <div class="cmd-desc">
+                      그룹에서 추첨을 시작합니다.
+                      예: <code>/lottery 5 3</code> → 5분 뒤 3명 추첨.
+                    </div>
+                  </li>
+                  <li class="cmd-item">
+                    <div class="cmd-code">
+                      <span>/lottery_end</span>
+                      <span class="cmd-arg">&lt;인원수&gt;</span>
+                    </div>
+                    <div class="cmd-desc">
+                      진행 중인 추첨을 종료하고 지정 인원 수만큼 당첨자를
+                      뽑습니다.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <div class="app-footer-inner">
+          <span>
+            문의:
+            <a href="https://t.me/KoonNFT" target="_blank">@KoonNFT</a>
+          </span>
+          <span>
+            GitHub:
+            <a
+              href="https://github.com/KoonNFT/terminalfi-bot-manual"
+              target="_blank"
+              >terminalfi-bot-manual</a
+            >
+          </span>
+        </div>
       </footer>
     </div>
-  </div>
 
-  <script src="../assets/theme.js"></script>
-</body>
+    <script src="assets/theme.js"></script>
+  </body>
 </html>
