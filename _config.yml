@@ -1,15 +1,17 @@
 title: "Terminal.Fi XP Bot Manual"
 description: "Telegram XP Bot Documentation"
-remote_theme: just-the-docs/just-the-docs
 
-# GitHub Pages 환경 변수
+# GitHub Pages 기본 Jekyll 빌더 사용 (remote_theme 제거)
+theme: "just-the-docs"
+
+# 기본 URL 설정
 url: "https://koonnft.github.io"
 baseurl: "/terminalfi-bot-manual"
 
 # Navigation
 nav_enabled: true
 
-# Custom color scheme
+# Custom color scheme (SCSS 파일 이름)
 color_scheme: terminalfi
 
 # Aux links
@@ -22,6 +24,6 @@ search_enabled: true
 search:
   button: true
 
-# Plugins (GitHub Pages가 지원하는 공식 플러그인만!)
+# GitHub Pages 기본 지원 플러그인만 사용
 plugins:
-  - jekyll-remote-theme
+  - jekyll-seo-tag
