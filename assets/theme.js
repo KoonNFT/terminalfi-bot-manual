@@ -1,35 +1,33 @@
-(function() {
+(function () {
   const root = document.documentElement;
-  const btn = document.getElementById('themeToggle');
+  const btn = document.getElementById("themeToggle");
 
   function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
+    root.setAttribute("data-theme", theme);
     if (btn) {
       btn.dataset.theme = theme;
-      btn.querySelector('.theme-label').textContent =
-        theme === 'dark' ? 'Light mode' : 'Dark mode';
-      btn.querySelector('.theme-emoji').textContent =
-        theme === 'dark' ? '☀️' : '🌙';
+      btn.textContent = theme === "dark" ? "☀️" : "🌙";
     }
   }
 
-  // 초기 테마: localStorage → 시스템 다크모드 → 기본 light
-  const stored = localStorage.getItem('terminalfi-theme');
+  const stored = localStorage.getItem("terminalfi-theme");
   if (stored) {
     applyTheme(stored);
-  } else if (window.matchMedia &&
-             window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyTheme('dark');
+  } else if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    applyTheme("dark");
   } else {
-    applyTheme('light');
+    applyTheme("light");
   }
 
   if (btn) {
-    btn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
+    btn.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
       applyTheme(next);
-      localStorage.setItem('terminalfi-theme', next);
+      localStorage.setItem("terminalfi-theme", next);
     });
   }
 })();
