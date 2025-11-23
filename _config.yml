@@ -1,23 +1,27 @@
-title: "Terminal.Fi XP Bot"
-description: "Telegram XP & Campaign Bot Manual"
+title: "Terminal.Fi XP Bot Manual"
+description: "Telegram XP Bot Documentation"
 remote_theme: just-the-docs/just-the-docs
 
-# 사이트 주소 (GitHub Pages 기준)
+# GitHub Pages 환경 변수
 url: "https://koonnft.github.io"
 baseurl: "/terminalfi-bot-manual"
 
-# 네비게이션
+# Navigation
 nav_enabled: true
 
-# 색상 스킴: 우리가 만들 custom scheme 이름
+# Custom color scheme
 color_scheme: terminalfi
 
-# 오른쪽 상단에 나오는 링크들
+# Aux links
 aux_links:
   "GitHub Repo":
     - "https://github.com/KoonNFT/terminalfi-bot-manual"
 
-# 검색 기능
+# Search
 search_enabled: true
 search:
   button: true
+
+# Plugins (GitHub Pages가 지원하는 공식 플러그인만!)
+plugins:
+  - jekyll-remote-theme
