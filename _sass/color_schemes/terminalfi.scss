@@ -1,17 +1,26 @@
 ---
 ---
 
-/* Just the Docs 기본 light 스킴을 베이스로 사용 (명시 안 해도 light 기준) */
-/* 링크/버튼/네비 색상을 보라색 → 파란색으로 변경 */
+/* 완전 화이트 톤 배경 (기본은 회색빛인데 #ffffff로 강제) */
+$body-background-color: #ffffff;
 
-$link-color: $blue-000;                 // 기본 링크 색
-$btn-primary-color: $blue-000;          // 기본 버튼 색
-$btn-primary-border-color: $blue-000;
+/* 사이드바(Left Nav) & 검색박스 배경도 화이트로 */
+$sidebar-color: #ffffff;
+$search-background-color: #ffffff;
 
-$nav-list-link-active-color: $blue-000; // 왼쪽 메뉴 선택됐을 때 텍스트
-$nav-list-link-active-border-color: $blue-000;
+/* 텍스트 컬러 – 순수 검정보다 눈 피로 적은 딥그레이 */
+$body-text-color: #2a2a2a;
+$body-heading-color: #1f1f1f;
 
-$body-heading-color: $grey-dk-300;      // 헤딩 색 살짝 진한 그레이
-$body-text-color: $grey-dk-200;         // 본문 텍스트
+/* 링크/강조 색 – 기존 보라색 제거 → 전문적 느낌의 블루로 */
+$link-color: #0d6efd;
 
-/* 필요하면 여기 아래에 더 커스텀 가능 */
+/* 사이드바 active link 색 */
+$nav-list-link-active-color: #0d6efd;
+$nav-list-link-active-border-color: #0d6efd;
+
+/* 페이지 안의 박스(border), table, code block 등 연한 회색 */
+$border-color: #e5e5e5;
+
+/* 코드블럭 배경을 완전 화이트에서 살짝 살린 톤으로 (눈 피로 방지) */
+$code-background-color: #fdfdfd;
