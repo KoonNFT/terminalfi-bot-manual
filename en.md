@@ -76,4 +76,38 @@ Admin commands are best used in **DM with the bot**.
 
 ### 4) XP Policy
 
-- `/set_cooldown <seconds>` – Minimum interval between XP gai_
+- `/set_cooldown <seconds>` – Minimum interval between XP gains per user  
+- `/set_daily_cap <XP>` – Maximum XP a user can earn per day  
+- `/set_inv_xp <XP>` – XP amount awarded per invite  
+
+---
+
+### 5) Campaign Controls
+
+- `/set_campaign <YYYY-MM-DD> <YYYY-MM-DD>` – Campaign XP period (used by `/event_rank`)  
+- `/clear_campaign` – Clear campaign period and related data  
+
+---
+
+### 6) Bot Operation & Status
+
+- `/set_time <start> <end>` – KST hours (0–23) when XP tracking is active/inactive  
+- `/bot_off` – Temporarily disable XP tracking and main features  
+- `/bot_on` – Re-enable the bot after it has been turned off  
+- `/bot_status` – Check current bot status and time configuration  
+
+---
+
+### 7) Manual XP & Lottery
+
+- `/add_xp <@handle> <XP>` – Manually add XP to a user  
+- `/sub_xp <@handle> <XP>` – Subtract XP from a user  
+- `/lottery [minutes] [winners]` – Start a lottery (e.g. `/lottery 5 3`)  
+- `/lottery_end <winners>` – End the lottery and draw that many winners  
+
+---
+
+## 📞 Contact
+
+Support / bug reports: **[@KoonNFT](https://t.me/KoonNFT)**  
+GitHub: [KoonNFT/terminalfi-bot-manual](https://github.com/KoonNFT/terminalfi-bot-manual)
