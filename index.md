@@ -1,6 +1,7 @@
 ---
-title: Terminal.Fi XP Bot (KR)
+title: 한국어
 nav_order: 1
+layout: default
 ---
 
 [🇺🇸 English](en)
@@ -45,6 +46,8 @@ nav_order: 1
 
 관리자 전용 명령어이며, **봇과 DM으로 사용하는 것을 권장**합니다.  
 (OWNER 전용 명령어는 이 문서에서 제외)
+
+---
 
 ### 1) 기본 조회
 
@@ -107,26 +110,27 @@ nav_order: 1
 ### 5) 캠페인 설정
 
 - `/set_campaign <YYYY-MM-DD> <YYYY-MM-DD>`  
-  → 캠페인 XP 집계 기간 설정 (`/event_rank`에 반영)
+  → 캠페인 XP 누적 기간 설정  
+    (`/event_rank` 명령어에 반영됨)
 
 - `/clear_campaign`  
-  → 설정된 캠페인 기간 및 관련 데이터 초기화
+  → 설정된 캠페인 기간 및 관련 집계 초기화
 
 ---
 
 ### 6) 봇 운영 시간 & 상태
 
 - `/set_time <시작> <종료>`  
-  → KST 기준, **XP 기록이 활성/비활성 되는 시간대** 설정 (0~23시 정수)
+  → XP 기록 활성/비활성 시간대(KST 기준, 0~23시 정수)
 
 - `/bot_off`  
-  → 봇의 XP 기록 및 주요 기능 **일시 중지**
+  → 봇 동작 및 XP 기록 **일시 정지**
 
 - `/bot_on`  
-  → 중지된 봇 기능 **다시 활성화**
+  → 봇 동작 **재개**
 
 - `/bot_status`  
-  → 현재 봇 상태 및 시간 설정 등 확인
+  → 현재 봇 상태 및 시간 설정 확인
 
 ---
 
@@ -139,15 +143,14 @@ nav_order: 1
   → 특정 유저의 **XP 차감**
 
 - `/lottery [분] [당첨자수]`  
-  → 그룹 추첨 시작  
-  예: `/lottery 5 3` → **5분 뒤 3명 추첨**
+  → 그룹에서 추첨 시작  
+    예: `/lottery 5 3` → 5분 뒤 3명 추첨
 
 - `/lottery_end <인원수>`  
-  → 진행 중인 추첨을 종료하고, 지정한 인원 수만큼 당첨자 선정
+  → 추첨 종료 후 지정 인원만큼 실제 당첨자 선정
 
 ---
 
 ## 📞 문의
 
-버그 제보 및 기능 문의: **[@KoonNFT](https://t.me/KoonNFT)**  
-GitHub: [KoonNFT/terminalfi-bot-manual](https://github.com/KoonNFT/terminalfi-bot-manual)
+버그 제보 및 기능 문의: **[@KoonNFT](https://t.me/KoonNFT)**
